@@ -1,6 +1,6 @@
 # TodoApp-by-Nelson
-# Built after my learning session on BASIC REACT .
-. It has SignUp Functionaltiy
+ Built after my learning session on BASIC REACT .
+. It has SignUp Functionaltiy and i used A Lazyloading Libray to load the user's prefered Bg image.
 
 ### LIVE PREVIEW : https://preeminent-conkies-8a5d90.netlify.app/
 
