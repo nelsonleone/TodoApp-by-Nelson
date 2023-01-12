@@ -1,0 +1,140 @@
+.signup-section{
+   position: fixed;
+   top:0;
+   bottom:0;
+   right:0;
+   left:0;
+   background: radial-gradient(#387989c4, #17b6dadc);
+   background-repeat: no-repeat;
+   display:flex;
+   align-items: center;
+   justify-content: center;
+   z-index:1;
+   font-family: 'Public Sans',Tahoma, sans-serif;
+}
+.companyLogo{
+  position:absolute;
+  border-radius: 50em;
+  width:4em;
+  aspect-ratio: .97/.94;
+  top:-1.5em;
+  border:1px solid #6dd5ed;
+  left:.5em;
+}
+.signup-contents{
+   max-width:90%;
+   margin:auto;
+   background-color:rgb(180, 203, 214);
+   padding:2em;
+   border-radius: 10px;
+   position: relative;
+   z-index:1000 !important;
+}
+.signup-contents .introText h1{
+   font-size: clamp(2.2rem, 1.379vw + 1.724rem, 3rem);
+   text-align: center;
+   color:rgb(7, 54, 92);
+}
+
+.signup-contents .introText p{
+   text-align: center;
+   margin-top:.3em;
+   color:#0561cafa;
+   font-weight: 500;
+}
+.signup-form{
+   margin-top:1em;
+}
+.signup-form div{
+   margin-block:1em;
+}
+.signup-form label{
+   margin-bottom:.2em;
+}
+.signup-form input{
+   width:100%;
+   padding:.5em;
+   border: 1px solid #6dd5ed;
+   border-radius: .3em;
+   font-family: inherit;
+}
+
+.signup-form input:focus{
+   border:2px solid #32b8da !important;
+   outline: none;
+}
+.signup-form input::placeholder{
+   color:rgb(247, 0, 136);
+   font-family: inherit;
+   font-size: .9rem;
+}
+.signup-form input[type=file]{
+   padding:.4em;
+   border:none;
+   color:rgb(247, 0, 136);
+   font-family: inherit;
+   width:auto;
+   display:block;
+}
+.signup-form input[type=file]:focus{
+   border:none !important;
+   outline: none;
+}
+.signup-form select{
+   color:rgb(7, 54, 92);
+   font-size: inherit;
+   text-transform: uppercase;
+   padding:.4em;
+   text-align: center;
+   cursor: pointer;
+}
+.signup-form select option{
+   color:white;
+   background-color:rgb(7, 54, 92);
+   font-family: inherit;
+   font-size: 1rem;
+}
+
+.signup-form button[type="submit"]{
+   width:60%;
+   display:block;
+   margin-inline:auto;
+   background-color:rgb(7, 54, 92);
+   padding:.7em;
+   border-radius: 10px;
+   cursor: pointer;
+   color:white;
+}
+.signup-form button[type="submit"]:hover{
+   color:rgb(247, 0, 136);
+}
+
+.signup-form output img{
+   max-width:3rem;
+}
+
+.locationArea span{
+   color:#0561cafa;
+}
+.errormessage{
+   color:rgb(247, 0, 136);
+   text-align: center;
+   font-family: 'Courier New', Courier, monospace;
+}
+
+
+@media (min-width:50rem) {
+   .signup-form select{
+      display:block;
+   }
+   .signup-form button[type=submit]{
+      margin-top:1.5em;
+   }
+   .signup-form output > img{
+      max-width:5rem ;
+   }
+   .companyLogo{
+      width:3rem;
+      aspect-ratio: 1.1/1;
+   }
+}

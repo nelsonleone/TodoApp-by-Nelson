@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&family=Public+Sans:wght@500;700&family=Sofia&display=swap');
+
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+  padding:0;
+  margin:0;
+}
+
+body{
+  font-family: 'Public Sans',Tahoma, sans-serif;
+  min-height: 100vh;
+  background-color:rgba(255, 255, 255, 0.952);
+}
+
+label,
+button{
+  font-family: inherit;
+  font-size: inherit;
+}
+button{
+  border:none;
+  cursor:pointer;
+  background:none;
+}
+img{
+  max-width: 100%;
+  object-fit: cover;
+}
+h2{
+  color:hsl(0, 0%, 100%);
+  text-shadow: 6px 5px 8px black;
+  max-width:80%;
+  margin: auto ;
+  text-align: center;
+  font-size: 1.8rem;
+  background-color:rgb(98, 98, 173);
+  font-family:'Sofia','Courier New', Courier, monospace, cursive; 
+  padding:.3em 1em ;
+  border-radius: 6px;
+  position: relative;
+  z-index: 100;
+}
+
+main{
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+.user-prefBackground{
+  position: fixed;
+  bottom:0;
+  top:0;
+  object-fit: cover;
+  width:100%;
+  height:100%;
+  z-index:-1;
+}
+
+.background-overlay{
+  position: fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  bottom:0;
+  background: linear-gradient(to top right,#9090d45e,#5fa3b46c);
+  background-size: cover;
+  background-position: center;
+  background-repeat:no-repeat;
+}
+
+
+/*ELEMENT  STYLING  MAINLY RELY ON THERE PARENT CLASSNAMES*/
+
+
+.loading{
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  margin:auto;
+  display:block;
+  width:13em;
+}
+
+.toggle-widjet{
+  background:none;
+  z-index:100;
+  position:relative;
+}
+.toggle-widjet:focus{
+  border:none !important;
+  outline:none;
+}
+
+
+
+/* WEATHER SECTION .......weather widjet element styling */
+.weather-section{
+  background:hsl(0, 11%, 95%);
+  width:90%;
+  border-radius: 10px;
+  margin-left:1em;
+  padding:1em;
+  z-index:50;
+  position:absolute;
+  display:none;
+}
+.weather-section h1{
+  color:rgb(226, 160, 19);
+  text-transform: uppercase;
+}
+.weather-section span{
+  display:block;
+  text-transform: capitalize;
+}
+.weather-section span > span{
+  display:inline;
+  color:rgb(255, 166, 0);
+  margin-left:.5em;
+  text-transform: capitalize;
+}
+.weather-details div{
+  display:flex;
+  align-items: center;
+}
+.weather-section p{
+  color:rgb(89, 89, 170);
+  margin-top:.3em;
+}
+
+
+
+
+
+/* PROFILE SECTION ......user profile area content styling */
+.profile-icon{
+  width:2.5rem ;
+  position:absolute;
+  right:1em;
+  top:.3em;
+  cursor: pointer;
+  z-index:100;
+}
+.close-profile{
+  max-width:5rem !important;
+  border:none!important;
+  position: absolute;
+  right:1em;
+  transition: transform .3s ease-in-out;
+}
+.close-profile:hover{
+  transform: rotate(180deg);
+}
+.user-profile{
+  position:absolute;
+  right:1em;
+  top:1em;
+  background-color:rgb(255, 255, 255);
+  padding:1em;
+  border-radius: 10px;
+  text-align: center;
+  z-index:10000;
+  box-shadow: 0 0 8px 8px rgba(33, 67, 87, 0.301);
+}
+.user-profile h3{
+  color:rgb(226, 160, 19);
+  font-family: 'Sofia','Courier New', Courier, monospace, cursive; 
+  text-transform: capitalize;
+  font-size: 1.6rem;
+  max-width:80%;
+  margin:.4em auto;
+}
+.user-profile img{
+  max-width:6rem;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  border:2px solid rgb(226, 160, 19);
+  cursor: pointer;
+}
+.user-profile button{
+  padding:.5em 1em;
+  border-radius: 7px;
+  background-color:rgb(89, 89, 170);
+  color:white;
+  display:block;
+  margin-top:.5em;
+}
+.user-profile input{
+  display:block;
+  border:1px solid hsl(240, 32%, 51%);
+  width:90%;
+  border-radius: 7px;
+  padding:.4em;
+}
+.user-profile p{
+  margin-block:.5em;
+  font-size: .9rem;
+  color:hsl(240, 32%, 51%);
+}
+.user-profile label{
+  font-size: .9rem;
+}
+
+ 
+.weather-error p{
+  color:hsl(345, 100%, 51%);
+}
+.weather-error button{
+  width:50%;
+  margin: 1em auto;
+  display:block;
+  padding:.5em;
+  border-radius: 7px;
+  color:white;
+  background-color:hsl(345, 100%, 51%);
+}
+.weather-error button:hover{
+  background-color: hsla(345, 100%, 51%, 0.521);
+}
+
+
+
+
+/* user profile area, replace image content */
+.replaceImage-area{
+  background-color:hsl(240, 32%, 51%);
+  max-width:60%;
+  border-radius: 8px;
+  margin-bottom:.2em;
+}
+.replaceImage-area img{
+  border:none;
+  display:inline-block;
+}
+.replaceImage-area label{
+  color:rgb(89, 89, 170);
+}
+.replaceImage-area .wants-replaceBtn{
+  background-color:white;
+  padding:.4em;
+  color:hsl(240, 32%, 51%);
+  transition: .3s linear;
+}
+.wants-replaceBtn:hover{
+  background-color: transparent;
+  border:1px solid white;
+  color:white;
+}
+.replaceImage-area p{
+  color:white;
+  padding:.3em;
+}
+.wants-replace{
+  display:flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+
+
+
+.todo-section{
+  position:absolute;
+  top:39%;
+  left:0;
+  right:0;
+  margin:auto !important;
+  max-width:88%;
+  text-align: center;
+  padding-bottom:1em;
+}
+.todo-icons{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.add-todoBtn img{
+  width:3.2rem;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  transition: .3s linear;
+}
+.add-todoBtn{
+  margin-left:.5em;
+}
+.add-todoBtn:hover img{
+  box-shadow: 0 0 5px 5px rgba(70, 55, 199, 0.61);
+}
+.activeInput-state{
+  animation-name: scale;
+  animation-duration: .5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+@keyframes scale {
+  from{scale: .7;box-shadow: 0 0 5px 9px rgba(17, 240, 102, 0.61)};
+  to{scale:2;box-shadow: 0 0 5px 9px rgba(8, 102, 241, 0.281)}
+}
+
+.home-icon{
+  max-width:6rem;
+}
+
+
+.todo-section textarea{
+  border: 2px solid rgb(89, 89, 170);
+  max-width:80%;
+  margin-top:.3em;
+  font-size:1rem;
+  font-family: inherit;
+  padding:.5em;
+}
+textarea:focus{
+  border: 2px solid rgb(89, 89, 170);
+  outline: none;
+}
+.cancel-input{
+  background-color:hsl(345, 100%, 51%);
+  color:white;
+  padding:.2em .6em;
+  font-size:1rem;
+  position: relative;
+  left:-.7em;
+  border-radius: 3px;
+  top:-3.3em;
+}
+
+
+
+.todo-item,.todoItem-icons{
+  display:flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.todo-item{
+  margin-top:1em;
+  background-color:rgba(255, 255, 255, 0.952);
+  font-family: 'Poppins', sans-serif;
+  font-size:1rem;
+  border-radius: 10px;
+  text-align: left;
+  padding:.3em .7em;
+  border:3px solid rgb(89, 89, 170);
+}
+.todo-item p{
+  width:80%;
+  color:hsl(286, 57%, 9%);
+}
+.todoItem-icons{
+  width:20%;
+}
+.todoItem-icons button{
+  margin-inline:.3em;
+}
+.todoItem-icons button > img{
+  max-width:1.3rem;
+  transition:scale .3s ease-in-out;
+  -webkit-transition:scale .3s ease-in-out;
+}
+.todoItem-icons button:hover img{
+  scale: 1.15;
+}
+
+
+.mark-doneBtn{
+  max-width:1.4rem;
+  position: absolute;
+  left:-1em;
+  transition:scale .3s linear;
+}
+.mark-doneBtn:hover{
+  scale:1.1;
+}
+
+
+
+
+
+/* ALERT SECTION */
+.addAlert,
+.deleteAlert{
+  color:white;
+  transition:width .4s ease-in-out;
+  border-radius: 3px;
+  width:30%;
+  margin:auto;
+  position: absolute;
+  left:0;
+  right:0;
+  top:-.3em;
+  margin:auto;
+}
+.deleteAlert{
+  background-color: hsl(345, 84%, 46%);
+}
+.addAlert{
+  background-color: hsl(133, 32%, 51%);
+}
+
+
+/* view modal styling */
+.view-modal{
+  position:absolute;
+  bottom:0;
+  width:calc(100% + 1em);
+  left:-.5em;
+  top:-.2em;
+  background-color:rgb(89, 89, 170);
+  border-radius: 4px;
+  color:white;
+  margin:auto;
+  padding:.3em;
+}
+.view-modal p {
+  color:white;
+}
+.view-modal p:first-of-type{
+  font-size:.8rem;
+  color: rgb(0, 255, 55);
+  text-align: center;
+  margin-right:2em;
+}
+.view-modal p:last-of-type{
+  font-size:1.5rem;
+  margin-top:1em;
+  font-family:'Sofia','Courier New', Courier, monospace, cursive; 
+}
+.view-modal button{
+  position: absolute;
+  right:1em;
+  filter: brightness(0) invert(1);
+}
+
+
+
+@media (min-width:40rem) {
+  .home-icon{
+    top:12em;
+  }
+  .toggle-widjet{
+    display:none;
+  }
+  .weather-section{
+    display:block !important;
+  }
+  h2{
+    max-width:20rem;
+    position: relative;
+    top:.4em;
+  }
+  .profile-icon{
+    max-width:3rem;
+  }
+
+
+  .todo-section{
+    max-width:50%;
+    top:30%;
+  }
+  .todo-section textarea{
+    max-width:50%;
+  }
+
+  .todo-item,.todoItem-icons{
+    display:flex;
+    justify-content: space-between;
+  }
+
+  .todo-item p{
+    width:80%;
+  }
+  .todoItem-icons button > img{
+    max-width:1.8rem;
+  }
+  .todoItem-icons{
+    width:15%;
+  }
+  .mark-doneBtn{
+    max-width:2rem;
+    left:-1.3em;
+  }
+}
+@media (min-width:50rem) {
+
+  .weather-section{
+    max-width:20%;
+    top:1em;
+  }
+}

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" >
+	<circle cx="500" cy="500" r="450" stroke-width="100" stroke="#00af89" fill="#d5fdf4" />
+	<polyline points="263.75,521.15 410,667.55 748.85,328.7" stroke-width="100" stroke="#00af89" fill="#d5fdf4" />
+</svg>
