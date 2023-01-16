@@ -104,7 +104,7 @@ main{
   border-radius: 10px;
   margin-left:1em;
   padding:1em;
-  z-index:50;
+  z-index:50000;
   position:absolute;
   display:none;
 }
