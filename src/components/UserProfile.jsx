@@ -31,7 +31,7 @@ export default function UserProfile({userImage,userName,setUserDetails}){
          setThemeAlert(true)
          setTimeout(() => {
             setThemeAlert(false)
-         }, 3000);
+         }, 6000);
       }
    }
    
