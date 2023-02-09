@@ -52,7 +52,7 @@ export default function API_Time({userLocation,loaded}){
       }
    })
    
-   const widjetDisplayStyle = 
+   const widjetDisplayStyle = { 
       display: widjetDisplay ? "true" : "false",
    }
 
