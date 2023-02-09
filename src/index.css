@@ -106,7 +106,6 @@ main{
   padding:1em;
   z-index:50000;
   position:absolute;
-  display:none;
 }
 .weather-section h1{
   color:rgb(226, 160, 19);
@@ -445,9 +444,6 @@ textarea:focus{
   }
   .toggle-widjet{
     display:none;
-  }
-  .weather-section{
-    display:block !important;
   }
   h2{
     max-width:20rem;
