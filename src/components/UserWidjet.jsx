@@ -10,6 +10,8 @@ export default function API_Time({userLocation,loaded}){
    const date = new Date()
    const today = date.toLocaleDateString("en-US",dateOptions)
    const URL = `https://api.openweathermap.org/data/2.5/weather?q=${userLocation}&appid=6459870ec6da6883c32cb1c3c4dfc722`;
+   
+   const [widjetDisplay,setWidjetDisplay] = useState(false)
 
    useEffect(() => {
       fetch(URL)
@@ -49,17 +51,16 @@ export default function API_Time({userLocation,loaded}){
          localStorage.setItem("weatherData",JSON.stringify(weatherData))
       }
    })
-
-   function handleMobileWidjetDisplay(e){
-      const widjet = document.getElementById('widjet')
-      if(widjet.style.display === "block"){
-         widjet.style.display ="none";
-         e.target.setAttribute('aria-expanded',false)
-      }else{
-         widjet.style.display ="block";
-         e.target.setAttribute('aria-expanded',true)
-      }
+   
+   const widjetDisplayStyle
+      display: widjetDisplay ? "true" : "false"
    }
+
+   function handleMobileWidjetDisplay(){
+      setWidjetDisplay(!widjetDisplay)
+   }
+   
+   
 
 
 
@@ -70,7 +71,7 @@ export default function API_Time({userLocation,loaded}){
          <HamburgerIcon color="#FFF" open={false}/>
          </button>
 
-         <div className="weather-section" id="widjet">
+         <div className="weather-section" id="widjet" style={widjetDisplayStyle} aria-expanded={widjetDisplay ? "true" : "false"} />
             {weatherData === "" ? 
                <div className="weather-error">
                   <p>An Error Occured......retry</p>
