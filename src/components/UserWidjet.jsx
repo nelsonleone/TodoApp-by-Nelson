@@ -62,7 +62,7 @@ export default function API_Time({userLocation,loaded}){
    })
    
    const widjetDisplayStyle = { 
-      display: widjetDisplay ? "true" : "false",
+      display: widjetDisplay ? "block" : "none",
    }
 
    function handleMobileWidjetDisplay(){
