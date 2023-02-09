@@ -45,11 +45,20 @@ export default function API_Time({userLocation,loaded}){
          setWeatherData("")
       })
    }
+   
+  function resize(){
+     window.addEventListener('resize',() => {
+        window.innerWidth > 600 ? setWidjetDisplay(true) :  setWidjetDisplay(false)
+     })
+   }
 
    useEffect(() => {
       if(weatherData !== ""){
          localStorage.setItem("weatherData",JSON.stringify(weatherData))
       }
+      resize()
+      
+      return ()=> window.removeEventListener('resize',resize)
    })
    
    const widjetDisplayStyle = { 
@@ -57,7 +66,7 @@ export default function API_Time({userLocation,loaded}){
    }
 
    function handleMobileWidjetDisplay(){
-      setWidjetDisplay(!widjetDisplay)
+      setWidjetDisplay(prevState => prevState = !prevState)
    }
    
    
