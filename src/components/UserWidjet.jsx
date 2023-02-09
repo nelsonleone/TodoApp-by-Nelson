@@ -11,7 +11,7 @@ export default function API_Time({userLocation,loaded}){
    const today = date.toLocaleDateString("en-US",dateOptions)
    const URL = `https://api.openweathermap.org/data/2.5/weather?q=${userLocation}&appid=6459870ec6da6883c32cb1c3c4dfc722`;
    
-   const [widjetDisplay,setWidjetDisplay] = useState(false)
+   const [widjetDisplay,setWidjetDisplay] = useState(window.innerWidth > 600 ? true : false)
 
    useEffect(() => {
       fetch(URL)
