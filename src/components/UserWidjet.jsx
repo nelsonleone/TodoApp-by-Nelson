@@ -52,8 +52,8 @@ export default function API_Time({userLocation,loaded}){
       }
    })
    
-   const widjetDisplayStyle
-      display: widjetDisplay ? "true" : "false"
+   const widjetDisplayStyle = 
+      display: widjetDisplay ? "true" : "false",
    }
 
    function handleMobileWidjetDisplay(){
@@ -71,7 +71,7 @@ export default function API_Time({userLocation,loaded}){
          <HamburgerIcon color="#FFF" open={false}/>
          </button>
 
-         <div className="weather-section" id="widjet" style={widjetDisplayStyle} aria-expanded={widjetDisplay ? "true" : "false"} />
+         <div className="weather-section" id="widjet" style={widjetDisplayStyle} aria-expanded={widjetDisplay ? "true" : "false"}>
             {weatherData === "" ? 
                <div className="weather-error">
                   <p>An Error Occured......retry</p>
