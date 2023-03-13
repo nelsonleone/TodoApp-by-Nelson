@@ -1,11 +1,18 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styles from "./animatedbg.module.css";
 
 export default function AnimatedBackground(){
-   let viewport = window.innerWidth;
+  const [viewport,setViewport] = useState(window.innerWidth)
    
    useEffect(() => {
       viewport = window.innerWidth;
+      function resize(){
+         window.addEventListener('resize',() => {
+            setViewport(window.innerWidth)
+         })
+      }
+      resize()
+      return() => removeEventListener('resize',resize)
    },[viewport])
 
    return(
