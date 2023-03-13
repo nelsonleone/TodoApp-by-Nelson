@@ -58,17 +58,6 @@ main{
   z-index:-1;
 }
 
-.background-overlay{
-  position: absolute;
-  width:100vw;
-  min-height:100vh;
-  top:0;
-  background: linear-gradient(to top right,#9090d45e,#5fa3b46c);
-  background-size: cover;
-  background-position: center;
-  background-repeat:no-repeat;
-}
-
 
 /*ELEMENT  STYLING  MAINLY RELY ON THERE PARENT CLASSNAMES*/
 

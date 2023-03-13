@@ -121,13 +121,11 @@ function App() {
       }
       {signedUp && !loaded ? <LazyLoadImage src="/images/loadingg.svg" className='loading' /> :  ""}
       {loaded ?
-        <main style={defaultBackground !== "" && defaultBackground}>
+        <main style={defaultBackground  && defaultBackground}>
 
-          {appBackground.backgroundImage !== "" && 
+          {appBackground.backgroundImage  && 
             // Lazy loading the user-pref-background-image
             <>
-            <div className='background-overlay'>
-            </div>
             <LazyLoadImage src={appBackground.backgroundImage} className="user-prefBackground"/>
             </>
           }
