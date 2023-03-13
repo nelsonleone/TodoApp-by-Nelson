@@ -104,9 +104,8 @@ main{
   border-radius: 10px;
   margin-left:1em;
   padding:1em;
-  z-index:50;
+  z-index:50000;
   position:absolute;
-  display:none;
 }
 .weather-section h1{
   color:rgb(226, 160, 19);
@@ -264,7 +263,7 @@ main{
 
 .todo-section{
   position:absolute;
-  top:39%;
+  top:42%;
   left:0;
   right:0;
   margin:auto !important;
@@ -445,9 +444,6 @@ textarea:focus{
   }
   .toggle-widjet{
     display:none;
-  }
-  .weather-section{
-    display:block !important;
   }
   h2{
     max-width:20rem;

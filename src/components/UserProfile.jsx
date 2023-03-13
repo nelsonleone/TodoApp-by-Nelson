@@ -29,11 +29,9 @@ export default function UserProfile({userImage,userName,setUserDetails}){
    function handleChangeAlertText(text){
       if(text !== "Change")return;
       setThemeAlert(true)
-      const changeTime = setTimeout(() => {
+      setTimeout(() => {
          setThemeAlert(false)
       }, 3000)
-
-      return () => clearTimeout(changeTimer)
    }
    
 

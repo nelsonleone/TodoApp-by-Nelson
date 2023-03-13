@@ -10,6 +10,8 @@ export default function API_Time({userLocation,loaded}){
    const date = new Date()
    const today = date.toLocaleDateString("en-US",dateOptions)
    const URL = `https://api.openweathermap.org/data/2.5/weather?q=${userLocation}&appid=6459870ec6da6883c32cb1c3c4dfc722`;
+   
+   const [widjetDisplay,setWidjetDisplay] = useState(window.innerWidth > 600 ? true : false)
 
    useEffect(() => {
       fetch(URL)
@@ -43,23 +45,31 @@ export default function API_Time({userLocation,loaded}){
          setWeatherData("")
       })
    }
+   
+  function resize(){
+     window.addEventListener('resize',() => {
+        window.innerWidth > 600 ? setWidjetDisplay(true) :  setWidjetDisplay(false)
+     })
+   }
 
    useEffect(() => {
       if(weatherData !== ""){
          localStorage.setItem("weatherData",JSON.stringify(weatherData))
       }
+      resize()
+      
+      return ()=> window.removeEventListener('resize',resize)
    })
-
-   function handleMobileWidjetDisplay(e){
-      const widjet = document.getElementById('widjet')
-      if(widjet.style.display === "block"){
-         widjet.style.display ="none";
-         e.target.setAttribute('aria-expanded',false)
-      }else{
-         widjet.style.display ="block";
-         e.target.setAttribute('aria-expanded',true)
-      }
+   
+   const widjetDisplayStyle = { 
+      display: widjetDisplay ? "block" : "none",
    }
+
+   function handleMobileWidjetDisplay(){
+      setWidjetDisplay(prevState => prevState = !prevState)
+   }
+   
+   
 
 
 
@@ -70,7 +80,7 @@ export default function API_Time({userLocation,loaded}){
          <HamburgerIcon color="#FFF" open={false}/>
          </button>
 
-         <div className="weather-section" id="widjet">
+         <div className="weather-section" id="widjet" style={widjetDisplayStyle} aria-expanded={widjetDisplay ? "true" : "false"}>
             {weatherData === "" ? 
                <div className="weather-error">
                   <p>An Error Occured......retry</p>

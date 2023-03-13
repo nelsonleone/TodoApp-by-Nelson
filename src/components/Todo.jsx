@@ -138,7 +138,7 @@ export default function Todo({setTodos,todos}){
             <div>
                <textarea 
                  id="input-todo" 
-                 maxLength={100} 
+                 maxLength={200} 
                  onChange={(e) => setTodoInputValue(e.target.value)}
                  onKeyDown={(e) =>handleEnterKey(e)}
                  value={todoInputValue}
