@@ -59,8 +59,8 @@ main{
 }
 
 .background-overlay{
-  position: fixed;
-  width:100%;
+  position: absolute;
+  width:100vw;
   min-height:100vh;
   top:0;
   bottom:0;
