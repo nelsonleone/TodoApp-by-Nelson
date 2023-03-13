@@ -63,7 +63,6 @@ main{
   width:100vw;
   min-height:100vh;
   top:0;
-  bottom:0;
   background: linear-gradient(to top right,#9090d45e,#5fa3b46c);
   background-size: cover;
   background-position: center;
