@@ -27,12 +27,13 @@ export default function UserProfile({userImage,userName,setUserDetails}){
    }
 
    function handleChangeAlertText(text){
-      if(text === "Change"){
-         setThemeAlert(true)
-         setTimeout(() => {
-            setThemeAlert(false)
-         }, 3000);
-      }
+      if(text !== "Change")return;
+      setThemeAlert(true)
+      const changeTime = setTimeout(() => {
+         setThemeAlert(false)
+      }, 3000)
+
+      return () => clearTimeout(changeTimer)
    }
    
 
@@ -108,7 +109,9 @@ export default function UserProfile({userImage,userName,setUserDetails}){
                         {openPrompt && !wantsImageReplace ?
                            // when the prompt is opened requesting image change
                            <p className="wants-replace" id="wants-replace">Replace Profile Picture ?
-                              <button onClick={() => setWantsImageReplace(true)} className="wants-replaceBtn">Yes</button>
+                              {
+                                 !themeAlert && <button onClick={() => setWantsImageReplace(true)} className="wants-replaceBtn">Yes</button>
+                              }
                               <button onClick={() => setOpenPrompt(false)} aria-expanded={openPrompt} aria-controls="wants-replace">
                                  <img src="/images/icon-close.svg" alt="Close prompt" />
                               </button>
