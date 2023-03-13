@@ -45,6 +45,9 @@ h2{
 
 main{
   min-height: 100vh;
+  position: fixed;
+  top:0;
+  bottom:0;
   background-size: cover;
   background-position: center;
 }
