@@ -35,9 +35,6 @@ function App() {
     backgroundImage:""
   })
 
-  const [defaultBackground,setDefaultBackground] = useState({
-    backgroundImage:""
-  })
 
 
   const [todos,setTodos]  = useState(
@@ -66,7 +63,6 @@ function App() {
     .catch(function(err){
       if(err){
         alert('Network error While loading Background Of Choice....You can Refresh')
-        setDefaultBackground({backgroundImage:`linear-gradient(to top right,#9090d448,#387989af)`})
       }
     })
   },[userDetails.userPictureBackground])
@@ -121,7 +117,7 @@ function App() {
       }
       {signedUp && !loaded ? <LazyLoadImage src="/images/loadingg.svg" className='loading' /> :  ""}
       {loaded ?
-        <main style={defaultBackground  && defaultBackground}>
+        <main>
 
           {appBackground.backgroundImage  && 
             // Lazy loading the user-pref-background-image
