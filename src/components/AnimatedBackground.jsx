@@ -5,7 +5,6 @@ export default function AnimatedBackground(){
   const [viewport,setViewport] = useState(window.innerWidth)
    
    useEffect(() => {
-      viewport = window.innerWidth;
       function resize(){
          window.addEventListener('resize',() => {
             setViewport(window.innerWidth)
