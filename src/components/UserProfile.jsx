@@ -27,11 +27,20 @@ export default function UserProfile({userImage,userName,setUserDetails}){
    }
 
    function handleChangeAlertText(text){
+<<<<<<< HEAD
       if(text !== "Change")return;
       setThemeAlert(true)
       setTimeout(() => {
          setThemeAlert(false)
       }, 3000)
+=======
+      if(text === "Change"){
+         setThemeAlert(true)
+         setTimeout(() => {
+            setThemeAlert(false)
+         }, 3000);
+      }
+>>>>>>> parent of 512fb0c (update to theme changed alert)
    }
    
 
@@ -107,9 +116,7 @@ export default function UserProfile({userImage,userName,setUserDetails}){
                         {openPrompt && !wantsImageReplace ?
                            // when the prompt is opened requesting image change
                            <p className="wants-replace" id="wants-replace">Replace Profile Picture ?
-                              {
-                                 !themeAlert && <button onClick={() => setWantsImageReplace(true)} className="wants-replaceBtn">Yes</button>
-                              }
+                              <button onClick={() => setWantsImageReplace(true)} className="wants-replaceBtn">Yes</button>
                               <button onClick={() => setOpenPrompt(false)} aria-expanded={openPrompt} aria-controls="wants-replace">
                                  <img src="/images/icon-close.svg" alt="Close prompt" />
                               </button>
