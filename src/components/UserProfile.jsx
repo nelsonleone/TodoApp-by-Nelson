@@ -27,20 +27,11 @@ export default function UserProfile({userImage,userName,setUserDetails}){
    }
 
    function handleChangeAlertText(text){
-<<<<<<< HEAD
       if(text !== "Change")return;
       setThemeAlert(true)
       setTimeout(() => {
          setThemeAlert(false)
       }, 3000)
-=======
-      if(text === "Change"){
-         setThemeAlert(true)
-         setTimeout(() => {
-            setThemeAlert(false)
-         }, 3000);
-      }
->>>>>>> parent of 512fb0c (update to theme changed alert)
    }
    
 
